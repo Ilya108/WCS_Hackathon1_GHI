@@ -12,24 +12,49 @@ namespace Model;
  * Class Item
  * @package Model
  */
-class Contact
+class Personnage extends PersonnageManager
 {
-    private $id;
 
-    private $title;
+  public $personnage;
+  public $id;
+  public $name;
+  public $intelligence;
+  public $strength;
+  public $speed;
+  public $durability;
+  public $power;
+  public $combat;
 
     /**
      * @return mixed
      */
-    public function getId()
+    public function getstats()
     {
-        return $this->id;
+      return
+         $this->id;
+         $this->name;
+         $this->vie;
+         $this->intelligence;
+         $this->name;
+         $this->intelligence;
+         $this->strength;
+         $this->speed;
+         $this->durability;
+         $this->power;
+         $this->combat;
     }
 
     /**
      * @param mixed $id
      * @return Item
      */
+
+     public function getId()
+     {
+          return $this->id;
+     }
+
+
     public function setId($id)
     {
         $this->id = $id;

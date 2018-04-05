@@ -24,6 +24,7 @@ class Personnage extends PersonnageManager
   public $durability;
   public $power;
   public $combat;
+  public $img;
 
     /**
      * @return mixed
@@ -42,6 +43,13 @@ class Personnage extends PersonnageManager
          $this->durability;
          $this->power;
          $this->combat;
+    }
+    
+    
+    public function getImg()
+    {
+        return 
+            $this->img;
     }
 
     /**

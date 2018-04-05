@@ -25,7 +25,6 @@ class Personnage extends PersonnageManager
   public $durability;
   public $power;
   public $combat;
-  public $img;
 
     /**
      * @return mixed
@@ -33,15 +32,7 @@ class Personnage extends PersonnageManager
 
 
 
-     public function attack()
-     {
-      if ($perso1) {
 
-        $perso2->setVie()
-
-      }
-
-     }
 
 
     public function getstats()
@@ -57,13 +48,12 @@ class Personnage extends PersonnageManager
          $this->power;
          $this->combat;
     }
-    
-    
+
     public function getImg()
-    {
-        return 
-            $this->img;
-    }
+{
+    return
+        $this->img;
+} 
 
     /**
      * @param mixed $id

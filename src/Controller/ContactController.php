@@ -23,12 +23,27 @@ class ContactController extends AbstractController
      */
     public function index()
     {
-        $test = new Personnage(rand(0,731));
-        $test->getstats();
-        $test->getImg();
+        session_start();
+
+        $_SESSION['nom'] = 'test';
+        while ( ($perso1->id)==NULL ) {
+        $perso1 = new Personnage(rand(1,731));
+        }
+
+        $perso1->getstats();
+        $perso1->getImg();
 
 
-        return $this->twig->render('contact/index.html.twig', [ 'test' => $Perso1]);
+        while ( ($perso2->id == NULL) ) {
+          $perso2 = new Personnage(rand(1,731));
+        }
+          $perso2->getstats();
+          $perso2->getImg();
+
+
+
+
+        return $this->twig->render('contact/index.html.twig', ['perso1' => $perso1, 'perso2' => $perso2]);
 
     }
 
@@ -38,13 +53,22 @@ class ContactController extends AbstractController
      */
      public function attack()
      {
-          if ($perso1) {
 
-            $perso2->setVie();11
-
-      }
+      $perso1=$_GET['$perso1'];
+      $perso2=$_GET['$perso2'];
+       if ($perso1) {
+          $perso2->setVie($perso1->Degats);
+       }
+       if ($perso2) {
+          $perso1->setVie($perso2->Degats);
+       }
+        echo $perso1->vie;
+        echo $perso2->vie;
+         return $this->twig->render('contact/index.html.twig', ['perso1' => $perso1, 'perso2' => $perso2]);
 
      }
+
+
 
 
 }

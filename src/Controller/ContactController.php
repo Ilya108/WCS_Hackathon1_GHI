@@ -23,8 +23,9 @@ class ContactController extends AbstractController
      */
     public function index()
     {
-        $Perso1 = new Personnage(rand(0,700));
-        $Perso1->getstats();
+        $test = new Personnage(rand(0,731));
+        $test->getstats();
+        $test->getImg();
 
 
         return $this->twig->render('contact/index.html.twig', [ 'test' => $Perso1]);

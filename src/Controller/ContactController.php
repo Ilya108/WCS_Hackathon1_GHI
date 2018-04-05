@@ -26,7 +26,6 @@ class ContactController extends AbstractController
         $test = new Personnage(10);
         $test->getstats();
 
-
         return $this->twig->render('contact/index.html.twig', [ 'test' => $test]);
 
     }
@@ -35,57 +34,15 @@ class ContactController extends AbstractController
      * @param $id
      * @return string
      */
-    public function show(int $id)
+     
+/*    public function show(int $id)
     {
         $contactManager = new contactManager();
 
         $contact = $contactManager->findOneById($id);
 
         return $this->twig->render('contact/show.html.twig', ['contact' => $contact]);
-    }
+    } */
 
-    public function getstats($id)
-    {
-        $contactManager = new contactManager();
 
-        $contact = $contactManager->findOneById($id);
-
-        return $this->twig->render('contact/show.html.twig', ['contact' => $contact]);
-    }
-
-    /**
-     * @param $id
-     * @return string
-     */
-    public function edit(int $id)
-    {
-        // TODO : edit contact with id $id
-        return $this->twig->render('contact/edit.html.twig', ['contact', $id]);
-    }
-
-    /**
-     * @param $id
-     * @return string
-     */
-    public function add()
-    {
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $ContactManager = new contactManager();
-        $contact = $ContactManager->insert("$_POST[lastname]", "$_POST[firstname]", "$_POST[civility]");
-      }
-        return $this->twig->render('contact/index.html.twig');
-    }
-
-    /**
-     * @param $id
-     * @return string
-     */
-    public function delete()
-    {
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $ContactManager = new contactManager();
-        $contact = $ContactManager->delete("$_POST[ID]");
-      }
-        return $this->twig->render('contact/index.html.twig');
-    }
 }

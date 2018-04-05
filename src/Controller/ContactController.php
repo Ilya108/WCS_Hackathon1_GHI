@@ -8,10 +8,8 @@
 
 namespace Controller;
 
-use Model\Contact;
-use Model\ContactManager;
-use Model\Civility;
-use Model\CivilityManager;
+use Model\Personnage;
+use Model\PersonnageManager;
 
 /**
  * Class contactController
@@ -25,15 +23,12 @@ class ContactController extends AbstractController
      */
     public function index()
     {
-        $ContactManager = new contactManager();
-        $contact = $ContactManager->findAll();
+        $test = new Personnage(10);
+        $test->getstats();
 
 
-        $CivilityManager = new civilityManager();
-        $civility = $CivilityManager->findAll();
+        return $this->twig->render('contact/index.html.twig', [ 'test' => $test]);
 
-
-        return $this->twig->render('contact/index.html.twig', ['contact1' => $contact , 'civility' => $civility]);
     }
 
     /**
@@ -43,6 +38,16 @@ class ContactController extends AbstractController
     public function show(int $id)
     {
         $contactManager = new contactManager();
+
+        $contact = $contactManager->findOneById($id);
+
+        return $this->twig->render('contact/show.html.twig', ['contact' => $contact]);
+    }
+
+    public function getstats($id)
+    {
+        $contactManager = new contactManager();
+
         $contact = $contactManager->findOneById($id);
 
         return $this->twig->render('contact/show.html.twig', ['contact' => $contact]);

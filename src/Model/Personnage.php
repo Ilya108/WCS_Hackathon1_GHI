@@ -18,6 +18,7 @@ class Personnage extends PersonnageManager
   public $personnage;
   public $id;
   public $name;
+  public $vie;
   public $intelligence;
   public $strength;
   public $speed;
@@ -28,14 +29,26 @@ class Personnage extends PersonnageManager
     /**
      * @return mixed
      */
+
+
+
+     public function attack()
+     {
+      if ($perso1) {
+
+        $perso2->setVie()
+
+      }
+
+     }
+
+
     public function getstats()
     {
       return
          $this->id;
          $this->name;
          $this->vie;
-         $this->intelligence;
-         $this->name;
          $this->intelligence;
          $this->strength;
          $this->speed;
@@ -62,25 +75,226 @@ class Personnage extends PersonnageManager
         return $this;
     }
 
+
+
+
+
     /**
+     * Get the value of Class Item
+     *
      * @return mixed
      */
-    public function getTitle()
+    public function getPersonnage()
     {
-        return $this->title;
+        return $this->personnage;
     }
 
     /**
-     * @param mixed $title
-     * @return Item
+     * Set the value of Class Item
+     *
+     * @param mixed personnage
+     *
+     * @return self
      */
-    public function setTitle($title)
+    public function setPersonnage($personnage)
     {
-        $this->title = $title;
+        $this->personnage = $personnage;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Name
+     *
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set the value of Name
+     *
+     * @param mixed name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Intelligence
+     *
+     * @return mixed
+     */
+    public function getIntelligence()
+    {
+        return $this->intelligence;
+    }
+
+    /**
+     * Set the value of Intelligence
+     *
+     * @param mixed intelligence
+     *
+     * @return self
+     */
+    public function setIntelligence($intelligence)
+    {
+        $this->intelligence = $intelligence;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Strength
+     *
+     * @return mixed
+     */
+    public function getStrength()
+    {
+        return $this->strength;
+    }
+
+    /**
+     * Set the value of Strength
+     *
+     * @param mixed strength
+     *
+     * @return self
+     */
+    public function setStrength($strength)
+    {
+        $this->strength = $strength;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Speed
+     *
+     * @return mixed
+     */
+    public function getSpeed()
+    {
+        return $this->speed;
+    }
+
+    /**
+     * Set the value of Speed
+     *
+     * @param mixed speed
+     *
+     * @return self
+     */
+    public function setSpeed($speed)
+    {
+        $this->speed = $speed;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Durability
+     *
+     * @return mixed
+     */
+    public function getDurability()
+    {
+        return $this->durability;
+    }
+
+    /**
+     * Set the value of Durability
+     *
+     * @param mixed durability
+     *
+     * @return self
+     */
+    public function setDurability($durability)
+    {
+        $this->durability = $durability;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Power
+     *
+     * @return mixed
+     */
+    public function getPower()
+    {
+        return $this->power;
+    }
+
+    /**
+     * Set the value of Power
+     *
+     * @param mixed power
+     *
+     * @return self
+     */
+    public function setPower($power)
+    {
+        $this->power = $power;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Combat
+     *
+     * @return mixed
+     */
+    public function getCombat()
+    {
+        return $this->combat;
+    }
+
+    /**
+     * Set the value of Combat
+     *
+     * @param mixed combat
+     *
+     * @return self
+     */
+    public function setCombat($combat)
+    {
+        $this->combat = $combat;
 
         return $this;
     }
 
 
+
+    /**
+     * Get the value of Vie
+     *
+     * @return mixed
+     */
+    public function getVie()
+    {
+        return $this->vie;
+    }
+
+    /**
+     * Set the value of Vie
+     *
+     * @param mixed vie
+     *
+     * @return self
+     */
+    public function setVie($vie)
+    {
+        $this->vie = $vie;
+
+        return $this;
+    }
 
 }

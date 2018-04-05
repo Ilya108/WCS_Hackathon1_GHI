@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+{% if contact1 %}
+<h1>contacts</h1>
+<table>
+  <tr>
+    <th >Civility</th>
+    <th>Nom prénom</th>
+  </tr>
+
+        {% for contact in contact1 %}
+        {% for param in civility %}
+        {% if param.ID == contact.civility_id %}
+        <tr>
+            <td> {{ param.civility }}</td>
+            <td>{{ contact.lastname|upper }} {{ contact.firstname[:1]|upper ~ contact.firstname[1:]|lower }}</td>
+          </tr>
+
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+
+
+    </table>
+{% endif %}
+{% endblock %}

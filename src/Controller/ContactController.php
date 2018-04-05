@@ -23,11 +23,11 @@ class ContactController extends AbstractController
      */
     public function index()
     {
-        $test = new Personnage(10);
-        $test->getstats();
+        $Perso1 = new Personnage(rand(0,700));
+        $Perso1->getstats();
 
 
-        return $this->twig->render('contact/index.html.twig', [ 'test' => $test]);
+        return $this->twig->render('contact/index.html.twig', [ 'test' => $Perso1]);
 
     }
 
@@ -35,57 +35,15 @@ class ContactController extends AbstractController
      * @param $id
      * @return string
      */
-    public function show(int $id)
-    {
-        $contactManager = new contactManager();
+     public function attack()
+     {
+          if ($perso1) {
 
-        $contact = $contactManager->findOneById($id);
+            $perso2->setVie();11
 
-        return $this->twig->render('contact/show.html.twig', ['contact' => $contact]);
-    }
-
-    public function getstats($id)
-    {
-        $contactManager = new contactManager();
-
-        $contact = $contactManager->findOneById($id);
-
-        return $this->twig->render('contact/show.html.twig', ['contact' => $contact]);
-    }
-
-    /**
-     * @param $id
-     * @return string
-     */
-    public function edit(int $id)
-    {
-        // TODO : edit contact with id $id
-        return $this->twig->render('contact/edit.html.twig', ['contact', $id]);
-    }
-
-    /**
-     * @param $id
-     * @return string
-     */
-    public function add()
-    {
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $ContactManager = new contactManager();
-        $contact = $ContactManager->insert("$_POST[lastname]", "$_POST[firstname]", "$_POST[civility]");
       }
-        return $this->twig->render('contact/index.html.twig');
-    }
 
-    /**
-     * @param $id
-     * @return string
-     */
-    public function delete()
-    {
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $ContactManager = new contactManager();
-        $contact = $ContactManager->delete("$_POST[ID]");
-      }
-        return $this->twig->render('contact/index.html.twig');
-    }
+     }
+
+
 }

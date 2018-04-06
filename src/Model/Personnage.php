@@ -34,7 +34,7 @@ class Personnage extends PersonnageManager
 
      public function attack()
      {
-    
+
 
      }
 
@@ -51,13 +51,16 @@ class Personnage extends PersonnageManager
          $this->durability;
          $this->power;
          $this->combat;
+         $this->img;
     }
 
 
     public function getImg()
     {
         return
-            $this->img;
+            $this->imgSm;
+            $this->imgMd;
+
     }
 
     /**

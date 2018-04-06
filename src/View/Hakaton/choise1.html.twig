@@ -13,16 +13,22 @@ Choix du personnage
   <div class="row">
 
 
-      {% for i in 0..17 %}
-
+{% for key, Perso in Perso %}
     <div class="col-2">
-       
+
         <div class="thumbnail">
 
-            <h3><span class="titre">{{test1.name}}</span></h3>
-            <button type="button" class="">
-            <img src=" {{test.imgSm}}" alt="Superhéros" class="img-thumbnail">
+            <h3><span class="titre">{{Perso.name}}</span></h3>
+
+            <form class="" action="/choise2" method="POST">
+
+
+              <button type="hidden" class="">
+            <img src=" {{Perso.imgSm}}" alt="Superhéros" class="img-thumbnail">
+            <input type="hidden" name="Perso1" value="{{Perso.id}}">
             </button>
+
+                      </form>
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
@@ -36,53 +42,53 @@ Choix du personnage
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">{{ test.name }}</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitle">{{ Perso.name }}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                            <h2>Powerstats</h2>
-                            <p>Id : {{ test.id }}</p><br>
-                            <p>Nom : {{ test.name }}</p><br>
-                            <p>Vie : {{ test.vie }}</p><br>
-                            <p>INT : {{ test.intelligence }}</p><br>
-                            <p>FOR : {{ test.strength }}</p><br>
-                            <p>SPEED : {{ test.speed }}</p><br>
-                            <p>DUR : {{ test.durability }}</p><br>
-                            <p>POWER : {{ test.power }}</p><br>
-                            <p>COMB : {{ test.combat }}</p><br>
+                            <p>Id : {{ Perso.id }}</p><br>
+                            <p>Nom : {{ Perso.name }}</p><br>
+                            <p>Vie : {{ Perso.vie }}</p><br>
+                            <p>INT : {{ Perso.intelligence }}</p><br>
+                            <p>FOR : {{ Perso.strength }}</p><br>
+                            <p>SPEED : {{ Perso.speed }}</p><br>
+                            <p>DUR : {{ Perso.durability }}</p><br>
+                            <p>POWER : {{ Perso.power }}</p><br>
+                            <p>COMB : {{ Perso.combat }}</p><br>
                             <hr><br>
                             <h2>Description</h2><br>
                             <br>
                             <h3>Appearance</h3><br>
-                            <p>Gender : {{ test.gender }}</p><br>
-                            <p>Race : {{ test.race }}</p><br>
-                            <p>Height : {{ test.height }}</p><br>
-                            <p>Weight : {{ test.weight }}</p><br>
-                            <p>Eye color : {{ test.eyeColor }}</p><br>
-                            <p>Hair color : {{ test.hairColor }}</p><br>
+                            <p>Gender : {{ Perso.gender }}</p><br>
+                            <p>Race : {{ Perso.race }}</p><br>
+                            <p>Height : {{ Perso.height }}</p><br>
+                            <p>Weight : {{ Perso.weight }}</p><br>
+                            <p>Eye color : {{ Perso.eyeColor }}</p><br>
+                            <p>Hair color : {{ Perso.hairColor }}</p><br>
                             <hr><br>
                             <h3>Biography</h3><br>
-                            <p>FullName : {{ test.fullName }}</p><br>
-                            <p>AlterEgos : {{ test.alterEgos }}</p><br>
-                            <p>Aliases : {{ test.aliases }}</p><br>
-                            <p>Place of birth : {{ test.placeOfBirth }}</p><br>
-                            <p>First Appearance : {{ test.firstAppearance }}</p><br>
-                            <p>Publisher : {{ test.publisher }}</p><br>
+                            <p>FullName : {{ Perso.fullName }}</p><br>
+                            <p>AlterEgos : {{ Perso.alterEgos }}</p><br>
+                            <p>Aliases : {{ Perso.aliases }}</p><br>
+                            <p>Place of birth : {{ Perso.placeOfBirth }}</p><br>
+                            <p>First Appearance : {{ Perso.firstAppearance }}</p><br>
+                            <p>Publisher : {{ Perso.publisher }}</p><br>
                             <hr><br>
                             <h3>Work</h3><br>
-                            <p>Occupation : {{ test.occupation }}</p><br>
-                            <p>Base : {{ test.base }}</p><br>
+                            <p>Occupation : {{ Perso.occupation }}</p><br>
+                            <p>Base : {{ Perso.base }}</p><br>
                             <hr><br>
                             <h3>Connections</h3><br>
-                            <p>Group affiliation : {{ test.groupAffiliation }}</p><br>
-                            <p>Relatives : {{ test.relatives }}</p><br>
-                            
-                            
-                            
-                            
-                            
+                            <p>Group affiliation : {{ Perso.groupAffiliation }}</p><br>
+                            <p>Relatives : {{ Perso.relatives }}</p><br>
+
+
+
+
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -91,10 +97,11 @@ Choix du personnage
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-    {% endfor %}
 
+      {% endfor %}
 
   </div>
 </div>

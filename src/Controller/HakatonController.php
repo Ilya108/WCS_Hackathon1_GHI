@@ -29,77 +29,45 @@ class HakatonController extends AbstractController
      */
     public function choise1()
     {
+
         session_start();
-   /*         session_start();
-    GLOBAL $Perso1;
-    GLOBAL $Perso2;
 
-    while ($Perso1->id == NULL) {
-      $Perso1 = new Personnage(rand(0,700));
-    }
+        GLOBAL $Perso;
 
-    $_SESSION['Perso1'] = array($Perso1);
+        for ($i=1; $i < 19 ; $i++) {
+          $Perso[$i] = new Personnage(rand(0,700));
+          while ($Perso[$i]->id == NULL) {
+            $Perso[$i] = new Personnage(rand(0,700));
+          }
 
-
-    while ($Perso2->id == NULL) {
-      $Perso2 = new Personnage(rand(0,700));
-    }
-
-    $_SESSION['Perso2'] = array($Perso2);
-*/
-
-
-        
-
-       for($i = 1; $i < 18; $i++){
-        echo $i;
-        
-        
-        GLOBAL ${'test'.$i};
-        
-           
-        while (${'test'.$i}->id == NULL) {
-            ${'test'.$i} = new Personnage(rand(0,700));
-    
+          $_SESSION['Perso'.$i] = array($Perso[$i]);
         }
-           var_dump(${'test'.$i});
-        ${'test'.$i}->getstats();
-        ${'test'.$i}->getImg();
-        $_SESSION['test1'] = array($test1);
-        
-       }
-        
-        
-         return $this->twig->render('Hakaton/choise1.html.twig', [ for($i = 1; $i < 18; $i++) {'test'.$i => ${'test'.$i} ]);
-            
-        }
-        
-       
-       
 
-                            
+         return $this->twig->render('Hakaton/choise1.html.twig', ['Perso' => $Perso ]);
+
+        }
+
+
 
     public function choise2()
     {
-        $test = new Personnage(rand(0,731));
-        $test->getstats();
-        $test->getImg();
+      session_start();
+        GLOBAL $persoid1;
+        $_SESSION['persoid1'] = $_POST['Perso1'];
+        echo $_SESSION['persoid1'];
 
+          GLOBAL $Perso;
 
-        return $this->twig->render('Hakaton/choise2.html.twig', [ 'test' => $test]);
+          for ($i=1; $i < 19 ; $i++) {
+            $Perso[$i] = new Personnage(rand(0,700));
+            while ($Perso[$i]->id == NULL) {
+              $Perso[$i] = new Personnage(rand(0,700));
+            }
 
-    }
+            $_SESSION['Perso'.$i] = array($Perso[$i]);
+          }
 
-    /**
-     * @return string
-     */
-    public function fight()
-    {
-        $test = new Personnage(10);
-        $test->getstats();
+           return $this->twig->render('Hakaton/choise2.html.twig', ['Perso' => $Perso ]);
 
-
-        return $this->twig->render('Hakaton/fight.html.twig', [ 'test' => $test]);
-
-    }
+      }
 }

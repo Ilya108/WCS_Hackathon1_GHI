@@ -11,10 +11,9 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/', 'Contact/index');
     $r->addRoute('POST', '/attack1', 'Contact/attack1');
     $r->addRoute('POST', '/attack2', 'Contact/attack2');
-
     $r->addRoute('GET', '/accueil', 'Hakaton/accueil');
     $r->addRoute('GET', '/choise1', 'Hakaton/choise1');
-    $r->addRoute('GET', '/choise2', 'Hakaton/choise2');
+    $r->addRoute('POST', '/choise2', 'Hakaton/choise2');
     $r->addRoute('GET', '/fight', 'Hakaton/fight');
 
 });

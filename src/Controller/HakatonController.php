@@ -27,13 +27,25 @@ class HakatonController extends AbstractController
     /**
      * @return string
      */
-    public function choise()
+    public function choise1()
     {
         $test = new Personnage(10);
         $test->getstats();
+        $test->getImg();
 
 
-        return $this->twig->render('Hakaton/choise.html.twig', [ 'test' => $test]);
+        return $this->twig->render('Hakaton/choise1.html.twig', [ 'test' => $test]);
+
+    }
+
+    public function choise2()
+    {
+        $test = new Personnage(10);
+        $test->getstats();
+        $test->getImg();
+
+
+        return $this->twig->render('Hakaton/choise2.html.twig', [ 'test' => $test]);
 
     }
 

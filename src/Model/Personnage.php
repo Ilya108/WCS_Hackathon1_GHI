@@ -35,11 +35,7 @@ class Personnage extends PersonnageManager
 
      public function attack()
      {
-      if ($perso1) {
-
-        $perso2->setVie()
-
-      }
+    
 
      }
 
@@ -57,11 +53,11 @@ class Personnage extends PersonnageManager
          $this->power;
          $this->combat;
     }
-    
-    
+
+
     public function getImg()
     {
-        return 
+        return
             $this->img;
     }
 

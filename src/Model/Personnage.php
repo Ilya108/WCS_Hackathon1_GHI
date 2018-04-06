@@ -32,20 +32,13 @@ class Personnage extends PersonnageManager
 
 
 
-     public function attack()
-     {
-      if ($perso1) {
 
-        $perso2->setVie()
-
-      }
-
-     }
 
 
     public function getstats()
     {
-      return
+      
+         $this->image;
          $this->id;
          $this->name;
          $this->vie;

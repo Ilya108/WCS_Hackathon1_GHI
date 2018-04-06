@@ -18,6 +18,7 @@ class PersonnageManager
     $persoJson = file_get_contents('https://akabab.github.io/superhero-api/api/id/'.$id.'.json');
     $personnage = json_decode($persoJson, true);
     $this->id = $personnage['id'];
+    $this->image = $personnage['images']['sm'];
     $this->name = $personnage['name'];
     $this->intelligence = $personnage['powerstats']['intelligence'];
     $this->strength = $personnage['powerstats']['strength'];

@@ -7,7 +7,7 @@ Choix du personnage
 
 
 {% block content %}
-  <h1 class="title">Personnage 1</h1>
+  <h1 class="title">Choisissez le premier personnage</h1>
 
 <div class="container-fluid">
   <div class="row">
@@ -15,12 +15,11 @@ Choix du personnage
 
       {% for i in 0..17 %}
 
-
     <div class="col-2">
        
         <div class="thumbnail">
 
-            <h3><span class="titre">{{test.name}}</span></h3>
+            <h3><span class="titre">{{test1.name}}</span></h3>
             <button type="button" class="">
             <img src=" {{test.imgSm}}" alt="Superhéros" class="img-thumbnail">
             </button>

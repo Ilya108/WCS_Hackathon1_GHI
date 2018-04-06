@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+
+
+<h1>Personnage</h1>
+<img src="{{ test.image }}" alt="">
+<p>Id = {{ test.id }}</p><br>
+<p>Nom = {{ test.name }}</p><br>
+<p>Vie = {{ test.vie }}</p><br>
+<p>INT = {{ test.intelligence }}</p><br>
+<p>FOR = {{ test.strength }}</p><br>
+<p>SPEED = {{ test.speed }}</p><br>
+<p>DUR = {{ test.durability }}</p><br>
+<p>POWER = {{ test.power }}</p><br>
+<p>COMB = {{ test.combat }}</p><br>
+
+<form class="" action="/attack" method="GET">
+
+<button type="submit">ATTAQUEZ</button>
+<input type="hidden" name="perso1vie" value="{{ test | serialize }}">
+
+
+
+</form>
+{% endblock %}

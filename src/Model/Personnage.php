@@ -50,16 +50,13 @@ class Personnage extends PersonnageManager
 
 
 
-     public function attack()
-     {
 
-
-     }
 
 
     public function getstats()
     {
-      return
+      
+         $this->image;
          $this->id;
          $this->name;
          $this->vie;

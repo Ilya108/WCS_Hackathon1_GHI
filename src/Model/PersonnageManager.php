@@ -46,11 +46,11 @@ class PersonnageManager
     $this->base = $personnage['work']['base'];
     $this->groupAffiliation = $personnage['connections']['groupAffiliation'];
     $this->relatives = $personnage['connections']['relatives'];
-      
-    
-    
-      
-      
+
+
+
+
+
   }
 
 }

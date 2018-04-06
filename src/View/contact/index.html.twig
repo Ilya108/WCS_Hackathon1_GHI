@@ -2,34 +2,33 @@
 
 {% block content %}
 
-$SESSIONS
 
 
 <h1>Personnage</h1>
 <img src="{{ Perso1.image }}" alt="">
-<p>Id = {{ Perso1.id }}</p><br>
-<p>Nom = {{ Perso1.name }}</p><br>
-<p>Vie = {{ Perso1.vie }}</p><br>
-<p>INT = {{ Perso1.intelligence }}</p><br>
-<p>FOR = {{ Perso1.strength }}</p><br>
-<p>SPEED = {{ Perso1.speed }}</p><br>
-<p>DUR = {{ Perso1.durability }}</p><br>
-<p>POWER = {{ Perso1.power }}</p><br>
-<p>COMB = {{ Perso1.combat }}</p><br>
+<p>Id = {{ Perso1.id }}<br>
+Nom = {{ Perso1.name }}<br>
+Vie = {{ Perso1.vie }}<br>
+INT = {{ Perso1.intelligence }}<br>
+FOR = {{ Perso1.strength }}<br>
+SPEED = {{ Perso1.speed }}<br>
+DUR = {{ Perso1.durability }}<br>
+POWER = {{ Perso1.power }}<br>
+COMB = {{ Perso1.combat }}</p><br>
 
 <h1>Personnage</h1>
 <img src="{{ Perso2.image }}" alt="">
-<p>Id = {{ Perso2.id }}</p><br>
-<p>Nom = {{ Perso2.name }}</p><br>
-<p>Vie = {{ Perso2.vie }}</p><br>
-<p>INT = {{ Perso2.intelligence }}</p><br>
-<p>FOR = {{ Perso2.strength }}</p><br>
-<p>SPEED = {{ Perso2.speed }}</p><br>
-<p>DUR = {{ Perso2.durability }}</p><br>
-<p>POWER = {{ Perso2.power }}</p><br>
-<p>COMB = {{ Perso2.combat }}</p><br>
+<p>Id = {{ Perso2.id }}<br>
+Nom = {{ Perso2.name }}<br>
+Vie = {{ Perso2.vie }}<br>
+INT = {{ Perso2.intelligence }}<br>
+FOR = {{ Perso2.strength }}<br>
+SPEED = {{ Perso2.speed }}<br>
+DUR = {{ Perso2.durability }}<br>
+POWER = {{ Perso2.power }}<br>
+COMB = {{ Perso2.combat }}</p><br>
 
-<form class="" action="/attack" method="GET">
+<form class="" action="/attack1" method="POST">
 
 <button type="submit" name="button">ATTAQUEZ</button>
 

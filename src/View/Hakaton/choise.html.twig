@@ -7,29 +7,16 @@ Choix du personnage
 
 
 {% block content %}
-  <h1 class="title">Personnage 1</h1>
 
 <div class="container-fluid">
   <div class="row">
-
-
-      {% for i in 0..17 %}
-
-
     <div class="col-2">
-       
+       <span class="titre">{{test.name}}</span>
         <div class="thumbnail">
-
-            <h3><span class="titre">{{test.name}}</span></h3>
-            <button type="button" class="">
-            <img src=" {{test.imgSm}}" alt="Superhéros" class="img-thumbnail">
-            </button>
-
+            <img src=" {{ test.imgSm }}" alt="..." class="img-thumbnail">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                Details
-
-
+                Détails
             </button>
 
             <!-- Modal -->
@@ -87,16 +74,39 @@ Choix du personnage
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
+                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    {% endfor %}
-
-
+    <div class="col-2">
+      2 of 2
+    </div>
+    <div class="col-2">
+      3 of 2
+    </div>
+    <div class="col-2">
+      4 of 2
+    </div>
+    <div class="col-2">
+      5 of 2
+    </div>
+    <div class="col-2">
+      6 of 2
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      1 of 3
+    </div>
+    <div class="col-2">
+      2 of 3
+    </div>
+    <div class="col-2">
+      3 of 3
+    </div>
   </div>
 </div>
 

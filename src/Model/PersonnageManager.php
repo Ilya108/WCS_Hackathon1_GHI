@@ -15,7 +15,7 @@ class PersonnageManager
 
   function __construct($id)
   {
-    $persoJson = file_get_contents('https://akabab.github.io/superhero-api/api/id/'.$id.'.json');
+    $persoJson = file_get_contents('https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/id/'.$id.'.json');
     $personnage = json_decode($persoJson, true);
     $this->id = $personnage['id'];
     $this->image = $personnage['images']['sm'];
@@ -27,8 +27,30 @@ class PersonnageManager
     $this->power = $personnage['powerstats']['power'];
     $this->combat = $personnage['powerstats']['combat'];
     $this->vie = 100;
-
-
+    $this->imgSm = $personnage['images']['sm'];
+    $this->imgMd = $personnage['images']['md'];
+    $this->gender = $personnage['appearance']['gender'];
+    $this->race = $personnage['appearance']['race'];
+    $this->height = $personnage['appearance']['height'][1];
+    $this->weight = $personnage['appearance']['weight'][1];
+    $this->eyeColor = $personnage['appearance']['eyeColor'];
+    $this->hairColor = $personnage['appearance']['hairColor'];
+    $this->fullName = $personnage['biography']['fullName'];
+    $this->alterEgos = $personnage['biography']['alterEgos'];
+    $this->aliases = $personnage['biography']['aliases'][0];
+    $this->placeOfBirth = $personnage['biography']['placeOfBirth'];
+    $this->firstAppearance = $personnage['biography']['firstAppearance'];
+    $this->publisher = $personnage['biography']['publisher'];
+    $this->alignment = $personnage['biography']['alignment'];
+    $this->occupation = $personnage['work']['occupation'];
+    $this->base = $personnage['work']['base'];
+    $this->groupAffiliation = $personnage['connections']['groupAffiliation'];
+    $this->relatives = $personnage['connections']['relatives'];
+      
+    
+    
+      
+      
   }
 
 }

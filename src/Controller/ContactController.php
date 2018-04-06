@@ -72,6 +72,7 @@ class ContactController extends AbstractController
 
       $Perso2[0]->setVie($Attaque1);
 
+        return $this->twig->render('contact/index.html.twig', ['perso1' => $perso1, 'perso2' => $perso2]);
 
     }elseif ($Perso1[0]->speed < $Perso2[0]->speed) {
 

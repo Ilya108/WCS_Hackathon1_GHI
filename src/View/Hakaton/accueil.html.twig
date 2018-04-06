@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+Page des chats
+{% endblock %}
+
+{% block stylesheet %}
+
+{% endblock %}
+
+{% block content %}
+
+    {% for chat in mesChats %}
+      Bonjour je suis un chat.<br>
+      Je m'appele {{ chat.name}}.<br>
+      Ma couleur c'est {{ chat.color }}.<br>
+      {% if chat.collar is defined %}
+      La couleur de mon collier est {{ chat.collar.color }}.<br>
+      {% endif %}
+
+    {% endfor %}
+
+{% endblock %}

@@ -25,6 +25,24 @@ class Personnage extends PersonnageManager
   public $durability;
   public $power;
   public $combat;
+  public $img;
+  public $gender;
+  public $race;
+  public $height;
+  public $weight;
+  public $eyeColor;
+  public $hairColor;
+  public $fullName;
+  public $alterEgos;
+  public $aliases;
+  public $placeOfBirth;
+  public $firstAppearance;
+  public $publisher;
+  public $alignment;
+  public $occupation;
+  public $base;
+  public $groupAffiliation;
+  
 
     /**
      * @return mixed
@@ -48,6 +66,14 @@ class Personnage extends PersonnageManager
          $this->durability;
          $this->power;
          $this->combat;
+    }
+
+
+    public function getImg()
+    {
+        return 
+            $this->imgSm;
+            $this->imgMd;
     }
 
     /**

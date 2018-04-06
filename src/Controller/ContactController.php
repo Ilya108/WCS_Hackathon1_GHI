@@ -32,6 +32,7 @@ class ContactController extends AbstractController
 
         $perso1->getstats();
         $perso1->getImg();
+        return $this->twig->render('contact/index.html.twig', [ 'test' => $test]);
 
 
         while ( ($perso2->id == NULL) ) {
@@ -46,27 +47,6 @@ class ContactController extends AbstractController
         return $this->twig->render('contact/index.html.twig', ['perso1' => $perso1, 'perso2' => $perso2]);
 
     }
-
-    /**
-     * @param $id
-     * @return string
-     */
-     public function attack()
-     {
-
-      $perso1=$_GET['$perso1'];
-      $perso2=$_GET['$perso2'];
-       if ($perso1) {
-          $perso2->setVie($perso1->Degats);
-       }
-       if ($perso2) {
-          $perso1->setVie($perso2->Degats);
-       }
-        echo $perso1->vie;
-        echo $perso2->vie;
-         return $this->twig->render('contact/index.html.twig', ['perso1' => $perso1, 'perso2' => $perso2]);
-
-     }
 
 
 

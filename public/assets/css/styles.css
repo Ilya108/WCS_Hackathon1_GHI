@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 table
 {
@@ -26,6 +27,11 @@ table{
 width: 80%;
 
 }
+.jumbotron
+{
+height: 100%;    
+}
+
 
 
 h1
@@ -34,12 +40,27 @@ h1
   font-size: 3em;
 
 }
+h2
+{
+  text-align: center;
+  font-size: 2em;
+  margin: auto;
+  padding: 0;
+
+}
 
 h3
 {
+  text-align: center;
   font-size: 1em;
 
 }
+p
+{
+  font-size: 0,4em;
+
+}
+
 
 body
 {
@@ -72,3 +93,10 @@ font-family: 'Raleway', sans-serif;
 {
   text-align: center;
 }
+
+#fightChat
+{
+    margin-top: 4em;
+}
+=======
+>>>>>>> Dev

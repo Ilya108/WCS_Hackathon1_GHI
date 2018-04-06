@@ -1,23 +1,16 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}
-Page des chats
+Super combat
 {% endblock %}
 
 {% block stylesheet %}
-
+ <link rel="stylesheet" href="/assets/css/accueil.css">
 {% endblock %}
 
 {% block content %}
 
-    {% for chat in mesChats %}
-      Bonjour je suis un chat.<br>
-      Je m'appele {{ chat.name}}.<br>
-      Ma couleur c'est {{ chat.color }}.<br>
-      {% if chat.collar is defined %}
-      La couleur de mon collier est {{ chat.collar.color }}.<br>
-      {% endif %}
-
-    {% endfor %}
-
+<body>
+    <img src "public/assets/images/superHeros.jpg" id="fond" ...>
+</body>
 {% endblock %}

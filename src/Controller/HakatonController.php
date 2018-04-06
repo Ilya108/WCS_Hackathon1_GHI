@@ -29,7 +29,7 @@ class HakatonController extends AbstractController
      */
     public function choise1()
     {
-        $test = new Personnage(10);
+        $test = new Personnage(rand(0,731));
         $test->getstats();
         $test->getImg();
 

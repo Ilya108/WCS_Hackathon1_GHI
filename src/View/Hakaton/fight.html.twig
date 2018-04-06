@@ -1,23 +1,34 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}
-Page des chats
+Salle de combat
 {% endblock %}
 
-{% block stylesheet %}
-
-{% endblock %}
 
 {% block content %}
+ <h1 class="title">Au combat!!!</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div class="tumbinail">
+            <h3>Perso 1</h3>
+            <img src="{{test.img}}" alt="Personnage 1" class="img-thumbnail">
+            </div>
+        </div>
+        <div class="col-3">
+            Description
+        </div>
+        <div class="col-3">
+            Description
+        </div>
+        <div class="col-3">
+            <div class="tumbinail">
+            <h3>Perso 2</h3>
+            <img src="{{test.img}}" alt="Personnage 1" class="img-thumbnail">
+            </div>
+        </div>
+    </div>
 
-    {% for chat in mesChats %}
-      Bonjour je suis un chat.<br>
-      Je m'appele {{ chat.name}}.<br>
-      Ma couleur c'est {{ chat.color }}.<br>
-      {% if chat.collar is defined %}
-      La couleur de mon collier est {{ chat.collar.color }}.<br>
-      {% endif %}
-
-    {% endfor %}
+</div>
 
 {% endblock %}

@@ -2,41 +2,38 @@
 
 {% block content %}
 
-$SESSIONS
 
 
 <h1>Personnage</h1>
-<img src='{{ perso1.img }}'><br>
-<p>Id = {{ perso1.id }}<br>
-<p>Nom = {{ perso1.name }}<br>
-<p>Vie = {{ perso1.vie }}<br>
-<p>INT = {{ perso1.intelligence }}<br>
-<p>FOR = {{ perso1.strength }}<br>
-<p>SPEED = {{ perso1.speed }}<br>
-<p>DUR = {{ perso1.durability }}<br>
-<p>POWER = {{ perso1.power }}<br>
-<p>COMB = {{ perso1.combat }}</p><br>
+<img src="{{ Perso1.image }}" alt="">
+<p>Id = {{ Perso1.id }}<br>
+Nom = {{ Perso1.name }}<br>
+Vie = {{ Perso1.vie }}<br>
+INT = {{ Perso1.intelligence }}<br>
+FOR = {{ Perso1.strength }}<br>
+SPEED = {{ Perso1.speed }}<br>
+DUR = {{ Perso1.durability }}<br>
+POWER = {{ Perso1.power }}<br>
+COMB = {{ Perso1.combat }}</p><br>
 
 <h1>Personnage</h1>
+<img src="{{ Perso2.image }}" alt="">
+<p>Id = {{ Perso2.id }}<br>
+Nom = {{ Perso2.name }}<br>
+Vie = {{ Perso2.vie }}<br>
+INT = {{ Perso2.intelligence }}<br>
+FOR = {{ Perso2.strength }}<br>
+SPEED = {{ Perso2.speed }}<br>
+DUR = {{ Perso2.durability }}<br>
+POWER = {{ Perso2.power }}<br>
+COMB = {{ Perso2.combat }}</p><br>
 
-<p></p>
-<img src='{{ perso2.img }}'><br>
-<p>Id = {{ perso2.id }}<br>
-<p>Nom = {{ perso2.name }}<br>
-<p>Vie = {{ perso2.vie }}<br>
-<p>INT = {{ perso2.intelligence }}<br>
-<p>FOR = {{ perso2.strength }}<br>
-<p>SPEED = {{ perso2.speed }}<br>
-<p>DUR = {{ perso2.durability }}<br>
-<p>POWER = {{ perso2.power }}<br>
-<p>COMB = {{ perso2.combat }}</p><br>
+<form class="" action="/attack1" method="POST">
 
-<form class="" action="/attack" method="GET">
+<button type="submit" name="button">ATTAQUEZ</button>
 
 
-<input type="submit" name="" value="ATTAQUEEEEZ">
-<input type="hidden" name="perso1[]" value="{{ perso1 }}">
-<input type="hidden" name="perso2[]" value="{{ perso2 }}">
+
+
 </form>
-
 {% endblock %}

@@ -26,9 +26,11 @@ class PersonnageManager
     $this->power = $personnage['powerstats']['power'];
     $this->combat = $personnage['powerstats']['combat'];
     $this->vie = 100;
-    $this->img = $personnage['images']['sm'];
-      
-      
+    $this−>imgSm = $personnage['images']['sm'];
+    $this->imgMd = $personnage['images']['md'];
+
+
+
   }
 
 }

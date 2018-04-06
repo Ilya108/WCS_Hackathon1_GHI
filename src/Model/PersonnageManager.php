@@ -15,7 +15,7 @@ class PersonnageManager
 
   function __construct($id)
   {
-    $persoJson = file_get_contents('https://akabab.github.io/superhero-api/api/id/'.$id.'.json');
+    $persoJson = file_get_contents('https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/id/'.$id.'.json');
     $personnage = json_decode($persoJson, true);
     $this->id = $personnage['id'];
     $this->name = $personnage['name'];
@@ -27,8 +27,8 @@ class PersonnageManager
     $this->combat = $personnage['powerstats']['combat'];
     $this->vie = 100;
     $this->img = $personnage['images']['sm'];
-      
-      
+
+
   }
 
 }

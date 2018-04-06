@@ -25,7 +25,6 @@ class Personnage extends PersonnageManager
   public $durability;
   public $power;
   public $combat;
-  public $img;
 
     /**
      * @return mixed

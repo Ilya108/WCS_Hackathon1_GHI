@@ -21,15 +21,25 @@ class ContactController extends AbstractController
   /**
   * @return string
   */
+
   public function test()
   {
-    $perso1 = new Personnage;
-    var_dump($perso1);
-
+    for ($i=0; $i <= 18 ; $i++) {
+          $id = mt_rand(0,731);
+          echo $id.'<br>';
+    }
 
   }
 
   public function index()
+  {
+
+
+
+    return $this->twig->render('Hakaton/accueil.html.twig');
+  }
+
+  public function partie()
   {
 
     session_start();
@@ -52,7 +62,7 @@ class ContactController extends AbstractController
 
 
 
-    return $this->twig->render('contact/index.html.twig', [ 'Perso1' => $Perso1,  'Perso2' => $Perso2]);
+    return $this->twig->render('Hakaton/fight.html.twig', [ 'Perso1' => $Perso1,  'Perso2' => $Perso2]);
 
   }
 
@@ -74,15 +84,15 @@ class ContactController extends AbstractController
 
               $Attaque = ($Perso1[0]->strength) * ((100+$Perso1[0]->combat)/100);
               $DefAdverse = ((120-($Perso2[0]->durability)) /100);
-              $Rand = (mt_rand(10,30)/100);
-              $Attaque = round(($Attaque * $DefAdverse) * $Rand);
+              $Rand = (mt_rand(10,50)/100);
+              $Attaque = round(($Attaque * $Rand) * $DefAdverse);
               $Degats = $Perso2[0]->vie - $Attaque;
 
             }elseif ($Perso1[0]->strength < $Perso1[0]->intelligence) {
               $Attaque =($Perso1[0]->intelligence) * ((100+$Perso1[0]->power)/100);
               $DefAdverse = ((120-($Perso2[0]->durability)) /100);
-              $Rand = (mt_rand(10,30)/100);
-              $Attaque = round(($Attaque * $DefAdverse) * $Rand);
+              $Rand = (mt_rand(10,50)/100);
+              $Attaque = round(($Attaque * $Rand) * $DefAdverse);
               $Degats = $Perso2[0]->vie - $Attaque;
 
             }
@@ -95,15 +105,15 @@ class ContactController extends AbstractController
             if ($Perso2[0]->strength >= $Perso2[0]->intelligence) {
               $Attaque = ($Perso2[0]->strength) * ((100+$Perso2[0]->combat)/100);
               $DefAdverse = ((120-($Perso1[0]->durability)) /100);
-              $Rand = (mt_rand(10,30)/100);
-              $Attaque = round(($Attaque * $DefAdverse) * $Rand);
+              $Rand = (mt_rand(10,50)/100);
+              $Attaque = round(($Attaque * $Rand) * $DefAdverse);
               $Degats = $Perso1[0]->vie - $Attaque;
 
             }elseif ($Perso2[0]->strength < $Perso2[0]->intelligence) {
               $Attaque =($Perso2[0]->intelligence) * ((100+$Perso2[0]->power)/100);
               $DefAdverse = ((120-($Perso1[0]->durability)) /100);
-              $Rand = (mt_rand(10,30)/100);
-              $Attaque = round(($Attaque * $DefAdverse) * $Rand);
+              $Rand = (mt_rand(10,50)/100);
+              $Attaque = round(($Attaque * $Rand) * $DefAdverse);
               $Degats = $Perso1[0]->vie - $Attaque;
 
             }$Perso1[0]->setVie($Degats);
@@ -135,20 +145,18 @@ class ContactController extends AbstractController
             if ($Perso2[0]->strength >= $Perso2[0]->intelligence) {
               $Attaque = ($Perso2[0]->strength) * ((100+$Perso2[0]->combat)/100);
               $DefAdverse = ((120-($Perso1[0]->durability)) /100);
-              $Rand = (mt_rand(10,30)/100);
-              $Attaque = round(($Attaque * $DefAdverse) * $Rand);
+              $Rand = (mt_rand(10,50)/100);
+              $Attaque = round(($Attaque * $Rand) * $DefAdverse);
               $Degats = $Perso1[0]->vie - $Attaque;
 
-              echo "strength";
 
             }elseif ($Perso2[0]->strength < $Perso2[0]->intelligence) {
               $Attaque =($Perso2[0]->intelligence) * ((100+$Perso2[0]->power)/100);
               $DefAdverse = ((120-($Perso1[0]->durability)) /100);
-              $Rand = (mt_rand(10,30)/100);
-              $Attaque = round(($Attaque * $DefAdverse) * $Rand);
+              $Rand = (mt_rand(10,50)/100);
+              $Attaque = round(($Attaque * $Rand) * $DefAdverse);
               $Degats = $Perso1[0]->vie - $Attaque;
 
-              echo "Intelligence";
 
             }$Perso1[0]->setVie($Degats);
 
@@ -162,20 +170,18 @@ class ContactController extends AbstractController
 
                       $Attaque = ($Perso1[0]->strength) * ((100+$Perso1[0]->combat)/100);
                       $DefAdverse = ((120-($Perso2[0]->durability)) /100);
-                      $Rand = (mt_rand(10,30)/100);
-                      $Attaque = round(($Attaque * $DefAdverse) * $Rand);
+                      $Rand = (mt_rand(10,50)/100);
+                      $Attaque = round(($Attaque * $Rand) * $DefAdverse);
                       $Degats = $Perso2[0]->vie - $Attaque;
 
-                      echo "strength";
+
 
                     }elseif ($Perso1[0]->strength < $Perso1[0]->intelligence) {
                       $Attaque =($Perso1[0]->intelligence) * ((100+$Perso1[0]->power)/100);
                       $DefAdverse = ((120-($Perso2[0]->durability)) /100);
-                      $Rand = (mt_rand(10,30)/100);
-                      $Attaque = round(($Attaque * $DefAdverse) * $Rand);
+                      $Rand = (mt_rand(10,50)/100);
+                      $Attaque = round(($Attaque * $Rand) * $DefAdverse);
                       $Degats = $Perso2[0]->vie - $Attaque;
-
-                      echo "Intelligence";
 
                     }
 

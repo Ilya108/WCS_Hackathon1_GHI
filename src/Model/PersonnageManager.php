@@ -15,10 +15,10 @@ class PersonnageManager
 
   function __construct($id)
   {
-    while (file_get_contents('https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/id/'.$id.'.json') == FALSE ) {
+    while (file('/home/naashw/Documents/Wcs_odyssey/Hackathon/superhero-api/api/id/'.$id.'.json') == FALSE ) {
       $id = mt_rand(0,731);
     }
-    $persoJson =  file_get_contents('https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/id/'.$id.'.json');
+    $persoJson =  file_get_contents('/home/naashw/Documents/Wcs_odyssey/Hackathon/superhero-api/api/id/'.$id.'.json');
     $personnage = json_decode($persoJson, true);
     $this->id = $personnage['id'];
     $this->image = $personnage['images']['sm'];
@@ -30,6 +30,7 @@ class PersonnageManager
     $this->power = $personnage['powerstats']['power'];
     $this->combat = $personnage['powerstats']['combat'];
     $this->vie = 200;
+    $this->imgXs = $personnage['images']['xs'];
     $this->imgSm = $personnage['images']['sm'];
     $this->imgMd = $personnage['images']['md'];
     $this->gender = $personnage['appearance']['gender'];

@@ -25,8 +25,8 @@ class ContactController extends AbstractController
   public function test()
   {
     for ($i=0; $i <= 18 ; $i++) {
-          $id = mt_rand(0,731);
-          echo $id.'<br>';
+      $id = mt_rand(0,731);
+      echo $id.'<br>';
     }
 
   }
@@ -79,58 +79,60 @@ class ContactController extends AbstractController
 
 
     if ($Perso1[0]->speed >= $Perso2[0]->speed) {
+      $joueur = $Perso1[0]->name;
 
-            if ($Perso1[0]->strength >= $Perso1[0]->intelligence) {
+      if ($Perso1[0]->strength >= $Perso1[0]->intelligence) {
 
-              $Attaque = ($Perso1[0]->strength) * ((100+$Perso1[0]->combat)/100);
-              $DefAdverse = ((120-($Perso2[0]->durability)) /100);
-              $Rand = (mt_rand(10,50)/100);
-              $Attaque = round(($Attaque * $Rand) * $DefAdverse);
-              $Degats = $Perso2[0]->vie - $Attaque;
+        $Attaque = ($Perso1[0]->strength) * ((100+$Perso1[0]->combat)/100);
+        $DefAdverse = ((120-($Perso2[0]->durability)) /100);
+        $Rand = (mt_rand(10,50)/100);
+        $Attaque = round(($Attaque * $Rand) * $DefAdverse);
+        $Degats = $Perso2[0]->vie - $Attaque;
 
-            }elseif ($Perso1[0]->strength < $Perso1[0]->intelligence) {
-              $Attaque =($Perso1[0]->intelligence) * ((100+$Perso1[0]->power)/100);
-              $DefAdverse = ((120-($Perso2[0]->durability)) /100);
-              $Rand = (mt_rand(10,50)/100);
-              $Attaque = round(($Attaque * $Rand) * $DefAdverse);
-              $Degats = $Perso2[0]->vie - $Attaque;
+      }elseif ($Perso1[0]->strength < $Perso1[0]->intelligence) {
+        $Attaque =($Perso1[0]->intelligence) * ((100+$Perso1[0]->power)/100);
+        $DefAdverse = ((120-($Perso2[0]->durability)) /100);
+        $Rand = (mt_rand(10,50)/100);
+        $Attaque = round(($Attaque * $Rand) * $DefAdverse);
+        $Degats = $Perso2[0]->vie - $Attaque;
 
-            }
+      }
 
-            $Perso2[0]->setVie($Degats);
-                  echo  $text = $Perso1[0]->name.' à attaquer de '.$Attaque;
+      $Perso2[0]->setVie($Degats);
+      $text =  $Perso1[0]->name.' à attaquer de '.$Attaque;
 
     }elseif ($Perso1[0]->speed < $Perso2[0]->speed) {
+      $joueur = $Perso2[0]->name;
+      if ($Perso2[0]->strength >= $Perso2[0]->intelligence) {
+        $Attaque = ($Perso2[0]->strength) * ((100+$Perso2[0]->combat)/100);
+        $DefAdverse = ((120-($Perso1[0]->durability)) /100);
+        $Rand = (mt_rand(10,50)/100);
+        $Attaque = round(($Attaque * $Rand) * $DefAdverse);
+        $Degats = $Perso1[0]->vie - $Attaque;
 
-            if ($Perso2[0]->strength >= $Perso2[0]->intelligence) {
-              $Attaque = ($Perso2[0]->strength) * ((100+$Perso2[0]->combat)/100);
-              $DefAdverse = ((120-($Perso1[0]->durability)) /100);
-              $Rand = (mt_rand(10,50)/100);
-              $Attaque = round(($Attaque * $Rand) * $DefAdverse);
-              $Degats = $Perso1[0]->vie - $Attaque;
+      }elseif ($Perso2[0]->strength < $Perso2[0]->intelligence) {
+        $Attaque =($Perso2[0]->intelligence) * ((100+$Perso2[0]->power)/100);
+        $DefAdverse = ((120-($Perso1[0]->durability)) /100);
+        $Rand = (mt_rand(10,50)/100);
+        $Attaque = round(($Attaque * $Rand) * $DefAdverse);
+        $Degats = $Perso1[0]->vie - $Attaque;
 
-            }elseif ($Perso2[0]->strength < $Perso2[0]->intelligence) {
-              $Attaque =($Perso2[0]->intelligence) * ((100+$Perso2[0]->power)/100);
-              $DefAdverse = ((120-($Perso1[0]->durability)) /100);
-              $Rand = (mt_rand(10,50)/100);
-              $Attaque = round(($Attaque * $Rand) * $DefAdverse);
-              $Degats = $Perso1[0]->vie - $Attaque;
-
-            }$Perso1[0]->setVie($Degats);
-
-            echo  $text = $Perso2[0]->name.' à attaquer de '.$Attaque;
-          }
+      }$Perso1[0]->setVie($Degats);
+        $text =  $Perso2[0]->name.' à attaquer de '.$Attaque;
 
 
-    //    if ( ($Perso1[0]->vie > 0) && ($Perso2[0]->vie > 0) ) {
-    return $this->twig->render('Hakaton/fight1.html.twig', [ 'Perso1' => $Perso1[0], 'Perso2' => $Perso2[0] ]);
-    //    }elseif ( ($Perso1[0]->vie) < 1 ) {
-    //    echo "Perso 2 gagne";
-    //  }elseif ($Perso2[0]->vie < 1 ) {
-    //    echo "Perso 1 gagne";
-    // }
+    }
 
+        //            $text = "$text|nl2br".$_POST['informations'];
 
+   if ( ($Perso1[0]->vie > 0) && ($Perso2[0]->vie > 0) ) {
+      return $this->twig->render('Hakaton/fight1.html.twig', [ 'Perso1' => $Perso1[0], 'Perso2' => $Perso2[0], 'text' => $text, 'joueur' => $joueur  ]);
+   }elseif ( ($Perso1[0]->vie) < 1 ) {
+    echo $Perso2[0]->name." A gagner !";
+  }elseif ($Perso2[0]->vie < 1 ) {
+    echo $Perso1[0]->name." A gagner !";
+
+  }
   }
 
   public function attack2()
@@ -142,56 +144,65 @@ class ContactController extends AbstractController
 
     if ($Perso1[0]->speed >= $Perso2[0]->speed) {
 
-            if ($Perso2[0]->strength >= $Perso2[0]->intelligence) {
-              $Attaque = ($Perso2[0]->strength) * ((100+$Perso2[0]->combat)/100);
-              $DefAdverse = ((120-($Perso1[0]->durability)) /100);
-              $Rand = (mt_rand(10,50)/100);
-              $Attaque = round(($Attaque * $Rand) * $DefAdverse);
-              $Degats = $Perso1[0]->vie - $Attaque;
+      $joueur = $Perso2[0]->name;
+
+      if ($Perso2[0]->strength >= $Perso2[0]->intelligence) {
+        $Attaque = ($Perso2[0]->strength) * ((100+$Perso2[0]->combat)/100);
+        $DefAdverse = ((120-($Perso1[0]->durability)) /100);
+        $Rand = (mt_rand(10,50)/100);
+        $Attaque = round(($Attaque * $Rand) * $DefAdverse);
+        $Degats = $Perso1[0]->vie - $Attaque;
 
 
-            }elseif ($Perso2[0]->strength < $Perso2[0]->intelligence) {
-              $Attaque =($Perso2[0]->intelligence) * ((100+$Perso2[0]->power)/100);
-              $DefAdverse = ((120-($Perso1[0]->durability)) /100);
-              $Rand = (mt_rand(10,50)/100);
-              $Attaque = round(($Attaque * $Rand) * $DefAdverse);
-              $Degats = $Perso1[0]->vie - $Attaque;
+      }elseif ($Perso2[0]->strength < $Perso2[0]->intelligence) {
+        $Attaque =($Perso2[0]->intelligence) * ((100+$Perso2[0]->power)/100);
+        $DefAdverse = ((120-($Perso1[0]->durability)) /100);
+        $Rand = (mt_rand(10,50)/100);
+        $Attaque = round(($Attaque * $Rand) * $DefAdverse);
+        $Degats = $Perso1[0]->vie - $Attaque;
 
 
-            }$Perso1[0]->setVie($Degats);
+      }$Perso1[0]->setVie($Degats);
 
-            echo  $text = $Perso2[0]->name.' à attaquer de '.$Attaque;
-
-
-            }elseif ($Perso1[0]->speed < $Perso2[0]->speed)
-            {
-
-                    if ($Perso1[0]->strength >= $Perso1[0]->intelligence) {
-
-                      $Attaque = ($Perso1[0]->strength) * ((100+$Perso1[0]->combat)/100);
-                      $DefAdverse = ((120-($Perso2[0]->durability)) /100);
-                      $Rand = (mt_rand(10,50)/100);
-                      $Attaque = round(($Attaque * $Rand) * $DefAdverse);
-                      $Degats = $Perso2[0]->vie - $Attaque;
+    $text =  $Perso2[0]->name.' à attaquer de '.$Attaque;
 
 
+    }elseif ($Perso1[0]->speed < $Perso2[0]->speed)
+    {
+      $joueur = $Perso1[0]->name;
+      if ($Perso1[0]->strength >= $Perso1[0]->intelligence) {
 
-                    }elseif ($Perso1[0]->strength < $Perso1[0]->intelligence) {
-                      $Attaque =($Perso1[0]->intelligence) * ((100+$Perso1[0]->power)/100);
-                      $DefAdverse = ((120-($Perso2[0]->durability)) /100);
-                      $Rand = (mt_rand(10,50)/100);
-                      $Attaque = round(($Attaque * $Rand) * $DefAdverse);
-                      $Degats = $Perso2[0]->vie - $Attaque;
-
-                    }
-
-                    $Perso2[0]->setVie($Degats);
-                          echo  $text = $Perso1[0]->name.' à attaquer de '.$Attaque;
-            }
+        $Attaque = ($Perso1[0]->strength) * ((100+$Perso1[0]->combat)/100);
+        $DefAdverse = ((120-($Perso2[0]->durability)) /100);
+        $Rand = (mt_rand(10,50)/100);
+        $Attaque = round(($Attaque * $Rand) * $DefAdverse);
+        $Degats = $Perso2[0]->vie - $Attaque;
 
 
-    return $this->twig->render('Hakaton/fight2.html.twig', [ 'Perso1' => $Perso1[0], 'Perso2' => $Perso2[0] ]);
 
+      }elseif ($Perso1[0]->strength < $Perso1[0]->intelligence) {
+        $Attaque =($Perso1[0]->intelligence) * ((100+$Perso1[0]->power)/100);
+        $DefAdverse = ((120-($Perso2[0]->durability)) /100);
+        $Rand = (mt_rand(10,50)/100);
+        $Attaque = round(($Attaque * $Rand) * $DefAdverse);
+        $Degats = $Perso2[0]->vie - $Attaque;
+
+      }
+
+      $Perso2[0]->setVie($Degats);
+      $text =  $Perso1[0]->name.' à attaquer de '.$Attaque;
+    }
+
+
+  //    $text = $text.$_POST['informations'];
+
+    if ( ($Perso1[0]->vie > 0) && ($Perso2[0]->vie > 0) ) {
+      return $this->twig->render('Hakaton/fight2.html.twig', [ 'Perso1' => $Perso1[0], 'Perso2' => $Perso2[0], 'text' => $text, 'joueur' => $joueur ]);
+    }elseif ( ($Perso1[0]->vie) < 1 ) {
+      echo $Perso2[0]->name." A gagner !";
+    }elseif ($Perso2[0]->vie < 1 ) {
+      echo $Perso1[0]->name." A gagner !";
+    }
   }
 
 }

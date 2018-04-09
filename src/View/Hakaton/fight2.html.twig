@@ -6,11 +6,16 @@ Salle de combat
 
 
 {% block content %}
- <h1 class="title">Au combat!!!</h1>
+<div class="row justify-content-md-center">
+  <div class="col-6">
+ <h1 class="title ">FIGHT ! au tour de {{ joueur }} d'attaquer</h1>
+  </div>
+</div>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-3">
-            <div class="thumbnail">
+            <div class="thumbnail text-center">
             <h3>{{Perso1.name}}</h3>
             <img src="{{Perso1.image}}" alt="Personnage 1" class="img-thumbnail">
 
@@ -30,7 +35,9 @@ Salle de combat
           <form class="" action="/attack1" method="POST">
 
 
-          <button type="submit">AAAAAAAA</button>
+          <button type="submit" class="btn btn-warning"> Lancez le tour !</button>
+          <input type="hidden" name="informations" value="{{ text|join('\n')|nl2br }}"><br>
+            <p> {{ text }}</p>
           </form>
           </div>
         <div class="col-2 text-right">

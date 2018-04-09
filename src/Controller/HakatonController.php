@@ -55,7 +55,7 @@ class HakatonController extends AbstractController
 
           GLOBAL $Perso;
 
-          for ($i=1; $i < 24 ; $i++) {
+          for ($i=1; $i <= 24 ; $i++) {
 
             $id = mt_rand(0,731);
             $Perso[$i] = new Personnage($id);

@@ -14,12 +14,12 @@ Choix du personnage
 
 
     {% for key, Perso in Perso %}
-    <div class="col-1">
+    <div class="col-2">
 
-      <div class="thumbnail">
+      <div class="thumbnail text-center " style="margin-top: 5vh;">
 
         <h3><span class="titre" style="font-size: 1.2ex;">{{Perso.name}}</span></h3>
-        
+
         <form class="" action="/Personnage2" method="POST">
 
           <input type="image" name="" src=" {{Perso.imgSm}}" alt="Superhéros" class="img-thumbnail">

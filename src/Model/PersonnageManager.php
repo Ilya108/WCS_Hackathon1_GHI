@@ -21,7 +21,7 @@ class PersonnageManager
     $persoJson =  file_get_contents('/home/naashw/Documents/Wcs_odyssey/Hackathon/superhero-api/api/id/'.$id.'.json');
     $personnage = json_decode($persoJson, true);
     $this->id = $personnage['id'];
-    $this->image = $personnage['images']['sm'];
+    $this->image = $personnage['images']['md'];
     $this->name = $personnage['name'];
     $this->intelligence = $personnage['powerstats']['intelligence'];
     $this->strength = $personnage['powerstats']['strength'];

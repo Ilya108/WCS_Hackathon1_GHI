@@ -1,0 +1,107 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+Choix du personnage
+{% endblock %}
+
+
+
+{% block content %}
+<h1 class="title">Choisissez le premier personnage</h1>
+
+<div class="container-fluid">
+  <div class="row">
+
+
+  {% for key, Perso in Perso %}
+  <div class="col-2">
+
+    <div class="thumbnail text-center">
+
+      <h3><span class="titre">{{Perso.name}}</span></h3>
+
+      <form class="" action="/partie" method="POST">
+
+        <input type="image" name="" src=" {{Perso.imgSm}}" alt="Superhéros" class="img-thumbnail">
+        <input type="hidden" name="Perso2" value="{{Perso.id}}">
+
+      </form>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+        Details
+
+
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">{{ Perso.name }}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h2>Powerstats</h2>
+              <p>Id : {{ Perso.id }}</p><br>
+              <p>Nom : {{ Perso.name }}</p><br>
+              <p>Vie : {{ Perso.vie }}</p><br>
+              <p>INT : {{ Perso.intelligence }}</p><br>
+              <p>FOR : {{ Perso.strength }}</p><br>
+              <p>SPEED : {{ Perso.speed }}</p><br>
+              <p>DUR : {{ Perso.durability }}</p><br>
+              <p>POWER : {{ Perso.power }}</p><br>
+              <p>COMB : {{ Perso.combat }}</p><br>
+              <hr><br>
+              <h2>Description</h2><br>
+              <br>
+              <h3>Appearance</h3><br>
+              <p>Gender : {{ Perso.gender }}</p><br>
+              <p>Race : {{ Perso.race }}</p><br>
+              <p>Height : {{ Perso.height }}</p><br>
+              <p>Weight : {{ Perso.weight }}</p><br>
+              <p>Eye color : {{ Perso.eyeColor }}</p><br>
+              <p>Hair color : {{ Perso.hairColor }}</p><br>
+              <hr><br>
+              <h3>Biography</h3><br>
+              <p>FullName : {{ Perso.fullName }}</p><br>
+              <p>AlterEgos : {{ Perso.alterEgos }}</p><br>
+              <p>Aliases : {{ Perso.aliases }}</p><br>
+              <p>Place of birth : {{ Perso.placeOfBirth }}</p><br>
+              <p>First Appearance : {{ Perso.firstAppearance }}</p><br>
+              <p>Publisher : {{ Perso.publisher }}</p><br>
+              <hr><br>
+              <h3>Work</h3><br>
+              <p>Occupation : {{ Perso.occupation }}</p><br>
+              <p>Base : {{ Perso.base }}</p><br>
+              <hr><br>
+              <h3>Connections</h3><br>
+              <p>Group affiliation : {{ Perso.groupAffiliation }}</p><br>
+              <p>Relatives : {{ Perso.relatives }}</p><br>
+
+
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {% endfor %}
+
+</div>
+</div>
+
+
+{% endblock %}

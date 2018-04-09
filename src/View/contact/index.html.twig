@@ -5,27 +5,35 @@
 
 
 <h1>Personnage</h1>
-<p>Id = {{ test.id }}</p><br>
-<p>Nom = {{ test.name }}</p><br>
-<p>Vie = {{ test.vie }}</p><br>
-<p>INT = {{ test.intelligence }}</p><br>
-<p>FOR = {{ test.strength }}</p><br>
-<p>SPEED = {{ test.speed }}</p><br>
-<p>DUR = {{ test.durability }}</p><br>
-<p>POWER = {{ test.power }}</p><br>
-<p>COMB = {{ test.combat }}</p><br>
+<img src="{{ Perso1.image }}" alt="">
+<p>Id = {{ Perso1.id }}<br>
+Nom = {{ Perso1.name }}<br>
+Vie = {{ Perso1.vie }}<br>
+INT = {{ Perso1.intelligence }}<br>
+FOR = {{ Perso1.strength }}<br>
+SPEED = {{ Perso1.speed }}<br>
+DUR = {{ Perso1.durability }}<br>
+POWER = {{ Perso1.power }}<br>
+COMB = {{ Perso1.combat }}</p><br>
+
+<h1>Personnage</h1>
+<img src="{{ Perso2.image }}" alt="">
+<p>Id = {{ Perso2.id }}<br>
+Nom = {{ Perso2.name }}<br>
+Vie = {{ Perso2.vie }}<br>
+INT = {{ Perso2.intelligence }}<br>
+FOR = {{ Perso2.strength }}<br>
+SPEED = {{ Perso2.speed }}<br>
+DUR = {{ Perso2.durability }}<br>
+POWER = {{ Perso2.power }}<br>
+COMB = {{ Perso2.combat }}</p><br>
+
+<form class="" action="/attack1" method="POST">
+
+<button type="submit" name="button">ATTAQUEZ</button>
 
 
-$this->id;
-$this->name;
-$this->vie;
-$this->intelligence;
-$this->name;
-$this->intelligence;
-$this->strength;
-$this->speed;
-$this->durability;
-$this->power;
-$this->combat;
 
+
+</form>
 {% endblock %}

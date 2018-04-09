@@ -11,7 +11,9 @@
     "require": {
         "nikic/fast-route": "^1.2",
         "twig/twig": "^2.4",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "jms/serializer": "^1.11",
+        "doctrine/cache": "^1.6"
     },
     "autoload": {
         "psr-4": {

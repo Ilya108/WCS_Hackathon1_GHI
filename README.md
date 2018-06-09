@@ -2,7 +2,7 @@
 
 Équipes de 3+ membres.
 
-**En 24 heures développer un Jeu versus (1v1 ou autre) avec :
+**En 24 heures développer un Jeu versus (1v1 ou autre) avec :**
 
 * Choix des personnages
 * Système de Points de vie
@@ -15,7 +15,7 @@
 * Proposer des fonctionnalités additionnelles originales
 * S’éclater
 
-**Organisation ->
+**Organisation ->**
 
 **Présentation :**
 * 3~5 min
